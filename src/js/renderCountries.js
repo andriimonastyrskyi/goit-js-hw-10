@@ -10,13 +10,16 @@ export default function renderCountries(dataCountries) {
   if (quantityCountries > 10) {
     Notify.info('Too many matches found. Please enter a more specific name.');
   } else if (quantityCountries >= 2 && quantityCountries <= 10) {
-    dataCountries.map(country => {
-      countryItems.push(`
-        <li class="wrap-flag_item">
+    countryItems = dataCountries
+      .map(
+        country =>
+          `<li class="wrap-flag_item">
           <img src='${country.flags.svg}' alt='' class="flags"/>
           <span>${country.name.official}</span>
-        </li>`);
-    });
+        </li>`
+      )
+      .join('');
+
     countryInfo.innerHTML = '';
     countryList.innerHTML = countryItems;
   } else {
@@ -30,10 +33,8 @@ export default function renderCountries(dataCountries) {
             <p>Capital: ${currentCountry.capital}</p>
             <p>Population: ${currentCountry.population}</p>
             <p>Languages: ${Object.values(currentCountry.languages).join(
-              ', '
-            )}</p>
-        
-    `;
+              ''
+            )}</p>`;
     countryList.innerHTML = '';
   }
 }
