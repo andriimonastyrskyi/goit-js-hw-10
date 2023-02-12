@@ -18,3 +18,48 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+body {
+  font-size: 25px;
+}
+
+p {
+  margin: 0px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.capital {
+  font-size: 30px;
+}
+
+.flags {
+  width: 60px;
+  height: auto;
+
+  margin-right: 15px;
+}
+
+.wrap_flag {
+  display: flex;
+  align-items: center;
+}
+
+.wrap-flag_item {
+  display: flex;
+  align-items: center;
+}
+
+.wrap-flag_item:not(:last-child) {
+  margin-bottom: 10px;
+}

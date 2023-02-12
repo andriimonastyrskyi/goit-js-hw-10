@@ -12,8 +12,8 @@ export default function renderCountries(dataCountries) {
   } else if (quantityCountries >= 2 && quantityCountries <= 10) {
     dataCountries.map(country => {
       countryItems.push(`
-        <li>
-          <img src='${country.flags.svg}' alt='' width=40 />
+        <li class="wrap-flag_item">
+          <img src='${country.flags.svg}' alt='' class="flags"/>
           <span>${country.name.official}</span>
         </li>`);
     });
@@ -21,17 +21,18 @@ export default function renderCountries(dataCountries) {
     countryList.innerHTML = countryItems;
   } else {
     countryInfo.innerHTML = `
-          <div>
-            <img src='${currentCountry.flags.svg}' alt='' width=40 />
-          <span>${currentCountry.name.official}</span>
+          <div class="wrap_flag">
+            <img src='${
+              currentCountry.flags.svg
+            }' alt='' class="flags" width=40 />
+          <span class="capital">${currentCountry.name.official}</span>
         </div>
-        <div >
             <p>Capital: ${currentCountry.capital}</p>
             <p>Population: ${currentCountry.population}</p>
             <p>Languages: ${Object.values(currentCountry.languages).join(
               ', '
             )}</p>
-        </div>
+        
     `;
     countryList.innerHTML = '';
   }
